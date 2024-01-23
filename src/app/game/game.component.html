@@ -1,0 +1,21 @@
+
+<div class="contenedor">
+    <h1>Piedra, papel, tijera</h1>
+    <div class="machine">
+        <img [src]="images[machine]"/>
+        <p>{{msg}}</p>
+    </div>
+    <div class="player">
+        <button (click)="jugar(1)">
+            <img src="assets/img/piedra.png"/>
+        </button>
+        <button (click)="this.jugar(2)">
+            <img src="assets/img/papel.png"/>
+        </button>
+        <button (click)="jugar(3)">
+            <img src="assets/img/tijera.png" />
+        </button>
+
+
+    </div>
+</div>
