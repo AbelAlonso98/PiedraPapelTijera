@@ -1,3 +1,12 @@
+  @keyframes move {
+    0% {
+      offset-distance: 0%;
+    }
+    100% {
+      offset-distance: 100%;
+    }
+  }
+
 img{
     width: 50px;
     height: 50px;
@@ -6,22 +15,83 @@ img{
 button{
     border: 2px solid black;
     margin: 2px;
+    width: 60px;
+    height: 60px;
 }
-button:focus{
+button:hover{
     filter: drop-shadow(0 0 4px brown);
+
 }
+
+h1{
+    margin: -0.25em;
+}
+.btnMachine{
+    pointer-events: none;
+}
+
+.btnPlayer{
+    cursor: pointer;
+}
+
+.blankDiv{
+    height: 50%;
+}
+
 .contenedor{
     background-color: bisque;
-    width: 300px;
+    width: 70vw;
+    height: 70vh;
     font-family: Papyrus;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-between;
     padding: 5px;
     border: 2px solid black;
 }
-.machine{
+.player .machine{
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+.main{
+    width: 100vw;
+    height: 95vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+.heart{
+    width: 40px;
+    height: 40px;
+    margin: 2px;
+    animation: latir 1s infinite;
+}
+
+.resetButton{
+    height: 15%;
+    width: 40%;
+    font-family: Papyrus;
+    font-size: large;
+    font-weight: bold;
+}
+
+.blankDiv{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+@keyframes latir {
+    0%{
+        transform: scale(0.9);
+    }
+    50%{
+        transform: scale(1);
+    }
+    100%{
+        transform: scale(0.9);
+    }
 }

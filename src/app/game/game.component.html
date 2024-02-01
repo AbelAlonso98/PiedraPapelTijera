@@ -1,21 +1,57 @@
-
-<div class="contenedor">
-    <h1>Piedra, papel, tijera</h1>
-    <div class="machine">
-        <img [src]="images[machine]"/>
-        <p>{{msg}}</p>
-    </div>
-    <div class="player">
-        <button (click)="jugar(1)">
-            <img src="assets/img/piedra.png"/>
-        </button>
-        <button (click)="this.jugar(2)">
-            <img src="assets/img/papel.png"/>
-        </button>
-        <button (click)="jugar(3)">
-            <img src="assets/img/tijera.png" />
-        </button>
-
-
+<div class="main">
+    <div *ngIf="vidasMaquina>0 && vidasJugador>0; else gameReset" class="contenedor">
+        <h1>M&aacute;quina</h1>
+        <div class="machineHearts">
+            <img *ngIf="vidasMaquina>=5" class="heart" src="assets/img/heart.png" />
+            <img *ngIf="vidasMaquina>=4" class="heart" src="assets/img/heart.png" />
+            <img *ngIf="vidasMaquina>=3" class="heart" src="assets/img/heart.png" />
+            <img *ngIf="vidasMaquina>=2" class="heart" src="assets/img/heart.png" />
+            <img *ngIf="vidasMaquina>=1" class="heart" src="assets/img/heart.png" />
+        </div>
+        <div class="machine">
+            <button class="btnMachine">
+                <img src="assets/img/piedra.png" />
+            </button>
+            <button class="btnMachine">
+                <img src="assets/img/papel.png" />
+            </button>
+            <button class="btnMachine">
+                <img src="assets/img/tijera.png" />
+            </button>
+        </div>
+        <div class="blankDiv">
+            <p>{{msg}}</p>
+        </div>
+        <div class="player">
+            <button (click)="this.jugar(1)" class="btnPlayer">
+                <img src="assets/img/piedra.png" />
+            </button>
+            <button (click)="this.jugar(2)" class="btnPlayer">
+                <img src="assets/img/papel.png" />
+            </button>
+            <button (click)="this.jugar(3)" class="btnPlayer">
+                <img src="assets/img/tijera.png" />
+            </button>
+        </div>
+        <div class="playerHearts">
+            <img *ngIf="vidasJugador>=5" class="heart" src="assets/img/heart.png" />
+            <img *ngIf="vidasJugador>=4" class="heart" src="assets/img/heart.png" />
+            <img *ngIf="vidasJugador>=3" class="heart" src="assets/img/heart.png" />
+            <img *ngIf="vidasJugador>=2" class="heart" src="assets/img/heart.png" />
+            <img *ngIf="vidasJugador>=1" class="heart" src="assets/img/heart.png" />
+        </div>
+        <h1>Jugador</h1>
     </div>
 </div>
+
+<ng-template #gameReset>
+
+    <div class="contenedor">
+        <h1 *ngIf="vidasJugador==0"> MAQUINA GANA </h1>
+        <h1 *ngIf="vidasMaquina==0"> JUGADOR GANA </h1>
+        <button (click)="this.reset()" class="resetButton">
+            Reiniciar
+        </button>
+    </div>
+
+</ng-template>
