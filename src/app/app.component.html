@@ -1,2 +1,10 @@
-<app-game></app-game>
+<mat-toolbar color="primary">
+    <div class="lol">
+        <div class="class" routerLink="/piedra-papel-tijera">Piedra, papel, tijera</div>
+        <div class="class" routerLink="/lista">Lista</div>
+        <div class="class" routerLink="/prueba-material">Prueba</div>
+        <div class="class" (click)="rutaAleatoria()">Cambiar desde TS</div>
+    </div>
+</mat-toolbar>
+
 <router-outlet></router-outlet>
